@@ -1,0 +1,8 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+/Option-2-Consul/.idea/
+/Option-1-Redis/.idea/
+

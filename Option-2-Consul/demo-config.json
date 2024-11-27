@@ -1,0 +1,47 @@
+{
+    "ApiCredentialConfiguration": {
+      "AppA": {
+        "BaseUrl": "https://api.appa.com",
+        "ApiKey": "your-api-key",
+        "MethodType": "GET",
+        "IsAnonymous": false
+      },
+      "AppB": {
+        "BaseUrl": "https://api.example.com",
+        "ApiKey": "your-api-key",
+        "MethodType": "POST",
+        "IsAnonymous": false
+      },
+      "AppC": {
+        "BaseUrl": "https://api.test.com",
+        "ApiKey": "your-api-key",
+        "MethodType": "PUT",
+        "IsAnonymous": true
+      }
+    },
+    "FeatureManagement": {
+      "UseFeatureA": true,
+      "UseFeatureB": false,
+      "UseFeatureC": true
+    },
+    "Logging": {
+        "Logging": {
+        "IncludeScopes": true,
+        "LogLevel": {
+            "Default": "Information",
+            "System": "Information",
+            "Microsoft": "Information"
+        },
+        "Console": {
+            "IncludeScopes": true,
+            "LogLevel": {
+                "Default": "Information",
+                "System": "Information",
+                "Microsoft": "Information"
+            }
+        }
+
+    }
+  }
+}
+  

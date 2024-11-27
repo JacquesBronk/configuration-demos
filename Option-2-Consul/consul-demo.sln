@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consul-demo", "consul-demo\consul-demo.csproj", "{255EE790-A5D3-4E11-BAA3-6A7104EB5167}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{168B0F09-6F96-43EA-B0C0-59C0D31C8874}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+		demo-config.json = demo-config.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{255EE790-A5D3-4E11-BAA3-6A7104EB5167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255EE790-A5D3-4E11-BAA3-6A7104EB5167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255EE790-A5D3-4E11-BAA3-6A7104EB5167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255EE790-A5D3-4E11-BAA3-6A7104EB5167}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

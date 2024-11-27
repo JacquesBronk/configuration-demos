@@ -1,0 +1,34 @@
+﻿networks:
+  open-demo:
+    driver: bridge
+    
+services:
+  open-feature-api-1:
+    image: open-feature-api
+    container_name: open-feature-api-1
+    build:
+      context: .
+      dockerfile: Open-Feature-Api/Dockerfile
+    ports:
+        - "5000:8080"
+    networks:
+      - open-demo
+  
+  open-feature-api-2:
+    image: open-feature-api
+    container_name: open-feature-api-2
+    build:
+      context: .
+      dockerfile: Open-Feature-Api/Dockerfile
+    ports:
+      - "5001:8080"
+    networks:
+      - open-demo
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - open-demo
+    

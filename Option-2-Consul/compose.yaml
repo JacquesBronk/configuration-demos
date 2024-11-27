@@ -1,0 +1,59 @@
+﻿networks:
+  consul-demo:
+    driver: bridge
+
+services:
+  consul-demo-1:
+    container_name: consul-demo-1
+    image: consul-demo
+    build:
+      context: .
+      dockerfile: consul-demo/Dockerfile
+    depends_on:
+      - consul
+    ports:
+      - "8080:8080"
+    networks:
+      - consul-demo
+  
+  consul-demo-2:
+    container_name: consul-demo-2
+    image: consul-demo
+    build:
+      context: .
+      dockerfile: consul-demo/Dockerfile
+    depends_on:
+      - consul
+    ports:
+      - "8081:8080"
+    networks:
+      - consul-demo
+  
+  consul:
+    container_name: consul
+    image: consul:1.15.4
+    ports:
+      - "8500:8500"
+      - "8600:8600/udp"
+    command: "agent -server -ui -bootstrap -client=0.0.0.0"
+    networks:
+      consul-demo:
+        aliases:
+          - consul
+
+  consul-loader:
+    image: appropriate/curl
+    depends_on:
+      - consul
+    command: >
+      sh -c "
+        until curl -s http://consul:8500/v1/status/leader; do
+          echo 'Waiting for Consul...';
+          sleep 1;
+        done;
+        curl --request PUT --data-binary @/config/demo-config.json http://consul:8500/v1/kv/appsettings/myapp;
+      "
+    volumes:
+      - ./demo-config.json:/config/demo-config.json
+    networks:
+      - consul-demo 
