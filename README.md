@@ -17,7 +17,7 @@ This demo uses Redis Pub/Sub to manage feature flags dynamically. It supports re
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-repo/open-feature-api.git
+    git clone https://github.com/JacquesBronk/configuration-demos.git
     cd open-feature-api
     ```
 2. Start the application:
